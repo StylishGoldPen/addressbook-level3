@@ -45,8 +45,11 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | add a new person |
 `* * *` | user | delete a person | remove entries that I no longer need
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
+`* * *` | user | edit a person's entry | update information that may be out-of-date
 `* *` | user | hide [private contact details](#private-contact-detail) by default | minimize chance of someone else seeing them by accident
+`* *` | user | create groups from multiple contacts | find contacts based on their grouping
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
+`*` | user | write notes of person | distinguish people who have similar names
 
 
 ## Appendix B : Use Cases
@@ -74,12 +77,47 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
+#### Use case: Renaming tag
+
+**MSS**
+
+1. User requests to list persons
+2. AddressBook shows a list of persons
+3. User requests to access a specific person in the list
+4. AddressBook shows the person's information
+5. User requests to edit tag of person
+6. AddressBook requires User to input updated tag
+7. User inputs updated tag
+8. AddressBook shows confirmation page to check with User
+9. User confirms the change
+10. AddressBook updates the tag according to User input
+Use case ends.
+
+**Extensions**
+
+2a. The list is empty
+
+> Use case ends
+
+3a. The given index is invalid
+
+> 3a1. AddressBook shows an error message <br>
+  Use case resumes at step 2
+  
+4a. The user inputs empty string when updating tag
+
+> 4a1. AddressBook shows an error message <br>
+  Use case resumes at step 4
+  
 ## Appendix C : Non Functional Requirements
 
 1. Should work on any [mainstream OS](#mainstream-os) as long as it has Java 8 or higher installed.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should be able to be accessed online and offline
+6. Should be able to hold up to 1000 tags
+7. Should be able to execute commands within one second
 
 ## Appendix D : Glossary
 
